@@ -1,3 +1,6 @@
+print-outer: print-outer.cc
+	g++ -o print-outer print-outer.cc
+
 1.5: 1.5.cc
 	g++ -o 1.5 1.5.cc
 
