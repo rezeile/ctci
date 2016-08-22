@@ -1,1 +1,1 @@
-1.6 -> rotate a matrix 90 degrees
+1. rotate an N x N matrix 90 degrees in place
