@@ -1,3 +1,6 @@
+rotate-matrix: rotate-matrix.cc
+	g++ -o rotate-matrix rotate-matrix.cc
+
 print-outer: print-outer.cc
 	g++ -o print-outer print-outer.cc
 
