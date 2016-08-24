@@ -1,4 +1,5 @@
 all: list.o kth.o kth 
+
 list.o: list.cc list.h
 	g++ -c list.cc
 kth.o: kth_to_last.cc node.h list.h
