@@ -13,10 +13,9 @@ stack<int> s3;
 stack<int> &get_tower(unsigned int n);
 
 void hanoi(unsigned int src, unsigned int dst, unsigned int tmp,size_t size) {
-	if(size == 0) return;
 	
 	// if there's only one element move it to the dstination
-	if(size == 1) {
+	if(size <= 1) {
 		if(!(get_tower(src)).empty()) {
 			(get_tower(dst)).push((get_tower(src)).top());
 	    	(get_tower(src)).pop();
@@ -25,16 +24,16 @@ void hanoi(unsigned int src, unsigned int dst, unsigned int tmp,size_t size) {
 	}
 	
 	// otherwise move top [1...size - 1] elements to tmp
-	hanoi(src,tmp,dst,size - 1);
+	hanoi(src,tmp,dst,size-1);
 	
 	// move bottom element to dstination
 	if(!(get_tower(src)).empty()) {
 		(get_tower(dst)).push((get_tower(src)).top());
 		(get_tower(src)).pop();
 	}
-	
+
 	// move top [1 ... size-1] elements to dst
-	hanoi(tmp,dst,src,1);
+	hanoi(tmp,dst,src,size - 1);
 }
 
 stack<int> &get_tower(unsigned int n) {
