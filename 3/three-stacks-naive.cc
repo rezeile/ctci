@@ -36,26 +36,31 @@ void print_stack(cust::stack &s,int stack_id) {
 	assert(stack_id >= 1 && stack_id <= 3);
 	std::cout << "[";
 	while(!s.empty(stack_id)) {
-		std::cout << s.pop(stack_id) << " ,";
+		std::cout << s.pop(stack_id) << ", ";
 	}
 	std::cout << "]" << std::endl;
 }
 
 int main() {
-	cust::stack s = cust::stack();
+	cust::stack s = cust::stack(30);
 	
 	// push to stack 1
 	size_t i;
 	for(i = 1; i <= 30; i++) {
-		if(i <= 10 ) 
+		if(i >= 1 && i <= 10 ) {
 			s.push(i,STACK_1);
-		else if (i <= 20)
+			continue;
+		}
+		else if (i >= 11 && i <= 20) {
 			s.push(i,STACK_2);
-		else 
+			continue;
+		}
+		else {
 			s.push(i,STACK_3); 
+		}
 	}
 	
-    print_stack(s,STACK_3);	
+    print_stack(s,STACK_1);	
 	//test_naive(s);
 	return 0;
 }

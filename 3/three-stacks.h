@@ -10,7 +10,7 @@ namespace cust {
 	// some data 
 	class stack {
 		public:
-			stack();
+			stack(int N);
 			~stack();
 			void push(int data, int stack_id);
 			int pop(int stack_id);
@@ -21,13 +21,28 @@ namespace cust {
 			int s1_top;
 			int s2_top;
 			int s3_top;
+			int s1_top_bnd;
+			int s1_bot_bnd;
+			int s2_top_bnd;
+			int s2_bot_bnd;
+			int s3_bot_bnd;
+			int s3_top_bnd;
 	};
 
-	stack::stack() {
-		container = new int[100];
-		s1_top = TOP_1;
-		s2_top = TOP_2;
-		s3_top = TOP_3;
+	stack::stack(int N) {
+		assert(N >= 3);
+		container = new int[N];
+		s1_bot_bnd = 0;
+		s1_top_bnd = (N / 3) - 1;
+		s2_bot_bnd = s1_top_bnd + 1;
+		s2_top_bnd = (N * 2)/3 - 1;
+		s3_bot_bnd = s2_top_bnd + 1;
+		s3_top_bnd = N - 1;
+		
+		/* initialize actual top positions */
+		s1_top = s1_bot_bnd;
+		s2_top = s2_bot_bnd;
+		s3_top = s3_bot_bnd;;
 	}
 
 	stack::~stack() {
@@ -48,31 +63,33 @@ namespace cust {
 	int stack::pop(int stack_id) {
 		assert(stack_id >= 1 && stack_id <= 3);
 		assert(!empty(stack_id));
+		/* note that s[n]_top contains the index of the next available
+		 * position on the stack */
 		if(stack_id == 1)
-			return container[s1_top--];
+			return container[--s1_top];
 		else if(stack_id == 2)
-			return container[s2_top--];
+			return container[--s2_top];
 		else 
-			return container[s3_top--];
+			return container[--s3_top];
 	}
 
 	bool stack::empty(int stack_id) {
 		assert(stack_id >= 1 && stack_id <= 3);
 		if(stack_id == 1)
-			return s1_top == 0;
+			return s1_top <= s1_bot_bnd;
 		else if(stack_id == 2)
-			return s2_top == 32;
+			return s2_top <= s2_bot_bnd;
 		else 
-			return s3_top == 65;
+			return s3_top <= s3_bot_bnd;
 	}
 
 	bool stack::full(int stack_id) {
 		assert(stack_id >= 1 && stack_id <= 3);
 		if(stack_id == 1)
-			return s1_top == 34;
+			return s1_top > s1_top_bnd;
 		else if(stack_id == 2)
-			return s2_top == 67;
+			return s2_top > s2_top_bnd;
 		else
-			return s3_top == 100;
+			return s3_top >  s3_top_bnd;;
 	}
 };

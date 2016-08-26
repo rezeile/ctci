@@ -10,6 +10,6 @@ towers: ../util/list.cc towers.cc
 	g++ -g -std=c++11 -o towers towers.o list.o
 
 three-stacks-naive: three-stacks-naive.cc three-stacks.h
-	g++ -o three-stacks-naive three-stacks-naive.cc
+	g++ -g -o three-stacks-naive three-stacks-naive.cc
 clean:
 	rm three-stacks-naive list.o towers.o towers
