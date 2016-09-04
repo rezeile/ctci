@@ -7,3 +7,5 @@
 4. (fourth time) Keep the steak alive
 
 5. ith time) keep the streak alive
+
+6. keep streak alive
