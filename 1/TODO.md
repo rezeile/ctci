@@ -8,6 +8,5 @@
 
 5. ith time) keep the streak alive
 
-6. keep streak alive
 
 
