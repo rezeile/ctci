@@ -5,17 +5,13 @@
 using namespace std;
 
 void setRowToZero(int r,mtx &m) {
-	for(int c = 0; c < m[r].size(); c++) {
-		if(m[r][c] != 0)
-			m[r][c] = 0;
-	}
+	for(int c = 0; c < m[r].size(); c++) 
+		m[r][c] = 0;
 }
 
 void setColToZero(int c,mtx &m) {
-	for(int r = 0; r < m.size(); r++) {
-		if(m[r][c] != 0)
-			m[r][c] = 0;
-	}
+	for(int r = 0; r < m.size(); r++) 
+		m[r][c] = 0;
 }
 
 void setColRowToZero(mtx &m) {
