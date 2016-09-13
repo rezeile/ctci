@@ -1,4 +1,4 @@
-all: list.o print-positions.o print-positions  kth.o kth delete-middle.o delete-middle remove-duplicates
+all: list.o print-positions.o print-positions partition.o kth.o kth delete-middle.o delete-middle partition remove-duplicates
 
 list.o: list.cc list.h
 	g++ -c list.cc
@@ -24,5 +24,9 @@ print-postions.o: print-positions.cc
 print-positions: print-positions.cc
 	g++  -std=c++11 -o positions list.o print-positions.o 
 
+partition.o: partition.cc
+	g++ -g -std=c++11 -c partition.cc
+partition: partition.cc
+	g++ -g -std=c++11 -o partition list.o partition.o 
 clean:
-	rm delete-middle remove-duplicates kth_to_last.o list.o kth_to_last
+	rm partition delete-middle remove-duplicates kth_to_last.o list.o kth_to_last
