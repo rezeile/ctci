@@ -34,6 +34,25 @@ void partition(int x, node* &head) {
 	head = smaller;
 }
 
+void partition2(int x, node* &nde) {
+	node *head = nde;
+	node *tail = nde;
+
+	while(nde != nullptr) {
+		node *next = nde->next;
+		if(nde->data < x) {
+			nde->next = head;
+			head = nde;
+		} else {
+			tail->next = nde;
+			tail = nde;
+		}
+	}
+
+	tail->next = nullptr;
+	nde = head;
+}	
+
 int main() {
 	string s = "8 6 4 2";
 	stringstream ss(s);
@@ -41,7 +60,7 @@ int main() {
 	cout << "Before partition" << endl;	
 	print_node(list);
 	cout << "After partition" << endl;
-	partition(5,list);
+	partition2(5,list);
 	print_node(list);
 	return 0;
 }
