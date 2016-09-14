@@ -103,6 +103,7 @@ void invert_col(int in[n][n],int out[n][n]) {
 		c++;
 		r--;
 	}
+
 }
 
 template<unsigned int n>
@@ -125,5 +126,4 @@ int main() {
 	//rotate(m);
 	rotate_in_place_nth(m);
 	std::cout << "after rotation: " << std::endl;
-	print_matrix(m);
 }

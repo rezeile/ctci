@@ -1,24 +1,19 @@
 #include <algorithm>
 #include <iostream>
+typedef unsigned int uint;
 
 namespace my {
-	int min(int a,int b,int c) {
-		int temp_max = std::min(a,b);
+	uint min(uint a,uint b,uint c) {
+		uint temp_max = std::min(a,b);
 		return std::min(temp_max,c);
 	}
 };
 
-int map[100] = { [0 ... 99] = -1};/* global bad!! */
-int num_of_ways(int n) {
-	if(n <= 0) return 0;
+uint map[100] = { [0 ... 99] = 0};/* global bad!! */
+uint num_of_ways(uint n) {
 	if(n <= 2) return n;
-	if(n == 3) return 4;
-	
-	if(map[n] > -1) { 
-		return map[n];
-	}
-	map[n] = num_of_ways(n-1) + num_of_ways(n - 2) + num_of_ways(n - 3);
-	return map[n];
+	if(n == 3) return n + 1;
+	return num_of_ways(n-1) + num_of_ways(n-2) + num_of_ways(n-3);
 }
 
 void simple_tests() {
@@ -45,7 +40,7 @@ void simple_tests() {
 
 void medium_tests() {
 	std::cout << "num_of_ways(4): " << std::endl;
-	std::cout << "expected: 4" << std::endl;
+	std::cout << "expected: 7" << std::endl;
 	std::cout << "received: " << num_of_ways(4) << std::endl;
  	std::cout << "------------------" << std::endl;
 
