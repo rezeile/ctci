@@ -1,4 +1,4 @@
-all: list.o print-positions.o sum-list.o print-positions partition.o kth.o kth delete-middle.o delete-middle partition  sum-list
+all: list.o print-positions.o sum-list.o delete-kth.o print-positions partition.o kth.o kth delete-middle.o delete-middle partition  sum-list
 
 list.o: list.cc list.h
 	g++ -c list.cc
@@ -8,6 +8,11 @@ kth.o: kth_to_last.cc node.h list.h
 
 kth: kth_to_last.cc node.h list.h list.cc
 	g++ -std=c++11 -o kth_to_last kth_to_last.o list.o
+
+delete-kth.o: delete-kth.cc
+	g++ -std=c++11 -c delete-kth.cc
+delete-kth:
+	g++ -std=c++11 -o delete-kth delete-kth.o list.o
 
 delete-middle.o: delete-from-middle.cc node.h list.h
 	g++ -c -o dmiddle.o delete-from-middle.cc
