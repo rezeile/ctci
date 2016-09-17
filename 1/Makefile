@@ -10,7 +10,7 @@
 #1.4: 1.4.cc
 	#c++  -o0  -g -o 1.4 1.4.cc
 
-all: is-rotation set-to-zero.o print-matrix.o set-to-zero
+all: is-rotation set-to-zero.o print-matrix.o rotate.o set-to-zero rotate
 
 set-to-zero.o: set-to-zero.cc
 	g++ -std=c++11 -g -c set-to-zero.cc
@@ -24,5 +24,10 @@ set-to-zero:
 is-rotation: is-rotation.cc
 	g++ -std=c++11 -g -o is-rotation is-rotation.cc
 
+rotate.o: rotate.cc
+	g++ -std=c++11 -c rotate.cc
+
+rotate: rotate.cc
+	g++ -std=c++11 -o rotate rotate.o print-matrix.o
 clean:
 	rm -rf stz set-to-zero.o 1.4 1.5 1.4.dSYM
