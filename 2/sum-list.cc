@@ -41,18 +41,80 @@ node *sum_list(node *lista, node *listb) {
 	return sum;
 }
 
-int main() {
+void helper(node *lista,node *listb,uint carry, node* &sum_node) {
+	// assume that elements are the same size 
+	if(lista == nullptr) {
+		if(carry > 0) {
+			node *n = new node;
+			n->data = carry;
+			n->next = nullptr;
+			sum_node->next = n;
+		}
+	} else {
+		uint sum = carry + lista->data + listb->data;
+		uint store = sum % 10;
+		uint carry = sum / 10;
+		node *n = new node;
+		n->data = store;
+		n->next = nullptr;
+		sum_node->next = n;
+		helper(lista->next,listb->next,carry,sum_node->next);
+	}
+}
+
+node *sum_list2(node *lista, node *listb) {
+	if(lista == nullptr || listb == nullptr) return nullptr;
+	uint carry = 0;
+	node *sum_node = new node;
+	helper(lista,listb,carry,sum_node);
+	return sum_node->next;
+}
+
+void simpleTest1() {
 	string n1 = "5 5 5";
 	stringstream s1(n1);
 	string n2 = "6 6 6";
 	stringstream s2(n2);
-
 	node *lista = construct_list(s1);
 	node *listb = construct_list(s2);
-	
-	node *sum = sum_list(lista,listb);
+	node *sum = sum_list2(lista,listb);
+	cout << "Expected: " << "1 2 2 1" << endl;
+	cout << "Recieved: ";
 	print_node(sum);
-	
 	delete_list(sum);
+}
+
+void simpleTest2() {
+	string n1 = "3 1";
+	stringstream s1(n1);
+	string n2 = "9 1";
+	stringstream s2(n2);
+	node *lista = construct_list(s1);
+	node *listb = construct_list(s2);
+	node *sum = sum_list2(lista,listb);
+	cout << "Expected: " << "2 3" << endl;
+	cout << "Recieved: ";
+	print_node(sum);
+	delete_list(sum);
+}
+
+void simpleTest3() {
+	string n1 = "1";
+	stringstream s1(n1);
+	string n2 = "8";
+	stringstream s2(n2);
+	node *lista = construct_list(s1);
+	node *listb = construct_list(s2);
+	node *sum = sum_list2(lista,listb);
+	cout << "Expected: " << "9" << endl;
+	cout << "Recieved: ";
+	print_node(sum);
+	delete_list(sum);
+}
+
+int main() {
+	simpleTest1();
+	simpleTest2();
+	simpleTest3();	
 	return 0;
 }
