@@ -37,18 +37,17 @@ void partition(int x, node* &head) {
 void partition2(int x, node* &nde) {
 	node *head = nde;
 	node *tail = nde;
-
 	while(nde != nullptr) {
 		node *next = nde->next;
-		if(nde->data < x) {
+		if(nde->data <= x) {
 			nde->next = head;
 			head = nde;
 		} else {
 			tail->next = nde;
-			tail = nde;
+			tail = tail->next;
 		}
+		nde = next;
 	}
-
 	tail->next = nullptr;
 	nde = head;
 }	
