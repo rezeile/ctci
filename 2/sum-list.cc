@@ -70,6 +70,10 @@ node *sum_list2(node *lista, node *listb) {
 	return sum_node->next;
 }
 
+node *sum_list3(node *lista,node *listb,node* &result,uint value) {
+	result->data = 
+}
+
 void simpleTest1() {
 	string n1 = "5 5 5";
 	stringstream s1(n1);
