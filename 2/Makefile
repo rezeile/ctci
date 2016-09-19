@@ -37,8 +37,8 @@ partition: partition.cc
 sum-list.o: sum-list.cc
 	g++ -g -std=c++11 -c sum-list.cc
 
-sum-list: sum-list.cc
+sum-list: sum-list.cc list.cc
 	g++ -g -std=c++11 -o sum-list list.o sum-list.o 
 
 clean:
-	rm delete-kth partition delete-middle remove-duplicates kth_to_last.o list.o kth_to_last
+	rm delete-kth sum-list partition delete-middle remove-duplicates kth_to_last.o list.o kth_to_last

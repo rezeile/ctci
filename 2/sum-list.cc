@@ -5,6 +5,8 @@
 using namespace std;
 typedef unsigned int uint;
 
+
+
 node *sum_list(node *lista, node *listb) {
 	node *sum = nullptr, *sum_tail = nullptr;
 	uint carry = 0; 
@@ -70,8 +72,22 @@ node *sum_list2(node *lista, node *listb) {
 	return sum_node->next;
 }
 
-node *sum_list3(node *lista,node *listb,node* &result,uint value) {
-	result->data = 
+
+void helper3(node *lista, node *listb, node* &result, uint &carry) {
+	if(lista != nullptr || listb != nullptr) {
+		result->next = new node;
+		helper3(lista->next,listb->next,result->next,carry);
+		uint value = carry + lista->data + listb->data;
+		result->data = value % 2;
+		carry = value / 10;
+	}
+}
+
+node *sum_list3(node *lista,node *listb) {
+	node *result = new node;
+	uint carry = 0;
+	helper3(lista,listb,result,carry);
+	return result;
 }
 
 void simpleTest1() {
@@ -116,9 +132,24 @@ void simpleTest3() {
 	delete_list(sum);
 }
 
+void simpleTest4() {
+	string n1 = "1 0 2";
+	stringstream s1(n1);
+	string n2 = "9 9 9 ";
+	stringstream s2(n2);
+	node *lista = construct_list(s1);
+	node *listb = construct_list(s2);
+	node *sum = sum_list3(lista,listb);
+	cout << "Expected: " << "1 1 0 1" << endl;
+	cout << "Recieved: ";
+	print_node(sum);
+	//delete_list(sum);
+}
+
 int main() {
-	simpleTest1();
+	/*simpleTest1();
 	simpleTest2();
-	simpleTest3();	
+	simpleTest3();*/
+	simpleTest4();
 	return 0;
 }

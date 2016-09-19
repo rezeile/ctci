@@ -6,7 +6,8 @@
 #include "list.h"
 using namespace std;
 
-void print_node(const node *head) {
+void print_node(const node* &head) {
+	cout << "wtf" << endl;
 	const node *cur = head;
 	while(cur != nullptr) {
 		cout << cur->data << " ";
