@@ -1,4 +1,4 @@
-all: list.o print-positions.o sum-list.o delete-kth.o print-positions partition.o kth.o kth delete-middle.o delete-middle partition  sum-list delete-kth
+all: list.o print-positions.o sum-list.o delete-kth.o print-positions  kth.o kth  sum-list delete-kt is_palindromeh
 
 list.o: list.cc list.h
 	g++ -c list.cc
@@ -39,6 +39,9 @@ sum-list.o: sum-list.cc
 
 sum-list: sum-list.cc list.cc
 	g++ -g -std=c++11 -o sum-list list.o sum-list.o 
+
+is-palindrome: is-palindrome.cc 
+	g++ -g -std=c++11 -o is-palindrome is-palindrome.cc
 
 clean:
 	rm delete-kth sum-list partition delete-middle remove-duplicates kth_to_last.o list.o kth_to_last
