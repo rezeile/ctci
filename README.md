@@ -1,26 +1,26 @@
 Chapters in CTCI
 
-1. Arrays and Strings
+1. (DONE) Arrays and Strings
 
-2. Linked Lists
+2. (IN PROGRESS) Linked Lists
 
-3. Stacks and Queues
+3. (TODO) Stacks and Queues
 
-4. Trees and Graphs
+4. (TODO) Trees and Graphs
 
-5. Bit Manipulation
+5. (TODO) Bit Manipulation
 
 6. Brain Teasers
 
-7. Math and Probability
+7. (TODO) Math and Probability
 
 8. Object-Oriented Design
 
-9. Recursion and Dynamic Programming
+9. (TODO) Recursion and Dynamic Programming
 
-10. Scalability and Memory Limits
+10. (TODO) Scalability and Memory Limits
 
-11. Sorting and Searching
+11. (TODO) Sorting and Searching
 
 12. Testing
 
@@ -32,6 +32,6 @@ Chapters in CTCI
 
 16. Threads and Locks
 
-17. Moderate Problems
+17. (TODO) Moderate Problems
 
-18. Hard Problems
+18. (TODO) Hard Problems
