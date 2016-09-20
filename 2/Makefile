@@ -43,5 +43,9 @@ sum-list: sum-list.cc list.cc
 is-palindrome: is-palindrome.cc 
 	g++ -g -std=c++11 -o is-palindrome is-palindrome.cc
 
+detect-cycle: detect-cycle.cc node.h
+	g++ -g -std=c++11 -o detect-cycle detect-cycle.cc
 clean:
-	rm delete-kth sum-list partition delete-middle remove-duplicates kth_to_last.o list.o kth_to_last
+	rm delete-kth sum-list partition delete-middle remove-duplicates kth_to_last.o list.o kth_to_last detect-cycle
+
+
