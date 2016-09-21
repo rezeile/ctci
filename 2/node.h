@@ -6,14 +6,11 @@ struct node {
 	node *next;
 };
 
-void set_next(node* head,int value) {
-	if(head == nullptr) {
-		head = new node;
-		head->data = value;
-		head->next = nullptr;
-	}
-	cout << "in here" << endl;
-	if(head == nullptr) cout << "head is null" << endl;
+/* adds an element to the tail of the list
+ * and returns the node that has been newly
+ * set. */
+node* set_next(node* &head,int value) {
+	if(head == nullptr) return head;
 	node *cur = head;
 	while(cur->next != nullptr) {
 		cur = cur->next;
@@ -22,6 +19,7 @@ void set_next(node* head,int value) {
 	n->data = value;
 	n->next = nullptr;
 	cur->next = n;
+	return cur->next;
 }
 
 void print_list(node* head) {

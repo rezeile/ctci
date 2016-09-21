@@ -14,5 +14,9 @@ three-stacks-naive: three-stacks-naive.cc three-stacks.h
 
 plates-test: plates-test.cc plates.h
 	g++ -g -o plates-test plates-test.cc
+
+constant-min: constant-min.cc constant-min.h
+	g++ -g -std=c++11 -o constant-min constant-min.cc
+
 clean:
-	rm three-stacks-naive list.o towers.o towers plates-test
+	rm three-stacks-naive list.o towers.o towers plates-test constant-min
