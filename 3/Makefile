@@ -18,5 +18,7 @@ plates-test: plates-test.cc plates.h
 constant-min: constant-min.cc constant-min.h
 	g++ -g -std=c++11 -o constant-min constant-min.cc
 
+my-queue: my-queue.cc my-queue.h
+	g++ -g -std=c++11 -o my-queue my-queue.cc
 clean:
 	rm three-stacks-naive list.o towers.o towers plates-test constant-min
