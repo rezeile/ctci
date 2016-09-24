@@ -7,4 +7,10 @@ struct node {
 	node *right;
 };
 
+struct TreeNode {
+	int val;
+	int height;
+	TreeNode *left;
+	TreeNode *right;
+};
 #endif

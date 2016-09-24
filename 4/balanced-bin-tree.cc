@@ -67,6 +67,39 @@ void add_children(node *root,int left_val, int right_val) {
 	}
 }
 
+void add_children(TreeNode *root,int left_val, int right_val) {
+	assert(root != nullptr);
+	if(left_val >= 0) {
+		root->left = new TreeNode;
+		root->left->left = nullptr;
+		root->left->right = nullptr;
+		root->left->val = left_val;
+	}
+	if(right_val >=  0) {
+		root->right = new TreeNode;
+		root->right->left = nullptr;
+		root->right->right = nullptr;
+		root->right->val = right_val;
+	}
+}
+
+bool isBalanced2(TreeNode *root) {
+	if(root == nullptr) return true;
+	if(root->left == nullptr && root->right == nullptr) {
+		root->height = 0;
+		return true;
+	} else if(root->left == nullptr) {
+		root->height = 1 + root->right->height;
+		if(root->height > 1) return false;
+	} else if(root->right == nullptr) {
+		root->height = 1 + root->left->height;
+		if(root->height > 1) return false;
+	}
+	return isBalanced2(root->left) && isBalanced2(root->right);
+	
+
+}
+
 /* 
  * clean up dynamically allocated memory 
  */
@@ -80,6 +113,6 @@ void add_children(node *root,int left_val, int right_val) {
  }
 
 int main() {
-	simple_tests();
-	medium_tests();
+	simple_tests2();
+	medium_tests2();
 }
