@@ -24,5 +24,8 @@ my-queue: my-queue.cc my-queue.h
 sort-stack: sort-stack.cc 
 	g++ -g -std=c++11 -o sort-stack sort-stack.cc
 
+shelter: shelter.cc shelter.h
+	g++ -g -std=c++11 -o shelter shelter.cc
+
 clean:
 	rm three-stacks-naive list.o towers.o towers plates-test constant-min sort-stack
