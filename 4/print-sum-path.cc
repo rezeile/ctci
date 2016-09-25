@@ -3,7 +3,7 @@
 #include "node.h"
 using namespace std;
 
-struct  PathInfo {
+/*struct  PathInfo {
 	vector<int> path;
 	int partial_sum = 0;
 };
@@ -32,7 +32,7 @@ void printSumPathHelpter(TreeNode *root,int sum,PathInfo pi) {
 		printSumPathHelper(root->left,sum,pi);
 		printSumPathHelper(root->right,sum,pi);
 	}
-}
+}*/
 
 int main() {
 	return 0;

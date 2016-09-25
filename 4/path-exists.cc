@@ -2,7 +2,7 @@
 #include <cstdio>
 using namespace std;
 
-struct GraphNode {
+/*struct GraphNode {
 	int value;
 	bool visited;
 	int weight;
@@ -23,7 +23,7 @@ bool findViaDFS(GraphNode source,GraphNode target) {
 
 bool pathExists(GraphNode n1,GraphNode n2) {
 	return findViaDFS(n1,n2) || findViaDFS(n2,n1);
-}
+}*/
 
 int main() {
 	freopen("path.txt","r",stdin);
