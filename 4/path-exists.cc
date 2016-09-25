@@ -90,7 +90,7 @@ bool pathExists(int n1, int n2, AdjList &graph) {
  * given a properly formatted input text
  */
 void populateGraph(AdjList &graph,char *file) {
-	freopen(argv[1],"r",stdin);
+	freopen(file,"r",stdin);
 	int V, total_neighbors, index, weight;
 	scanf("%d",&V);
 	for(int i = 0; i < V; i++) {
@@ -98,7 +98,7 @@ void populateGraph(AdjList &graph,char *file) {
 		scanf("%d ",&total_neighbors);
 		for(int j = 0; j < total_neighbors; j++) {
 			scanf("%d %d",&index,&weight);
-			neighbors[j] = makepair(index,weight);
+			neighbors[j] = make_pair(index,weight);
 		}
 		graph[i] = neighbors;
 	}
@@ -109,7 +109,7 @@ int main(int argc, char *argv[]) {
 		printf("please pass a graph input file");
 		exit(0);
 	}
-	AdjList &graph;
+	AdjList graph;
 	populateGraph(graph,argv[1]);
 	return 0;
 }
