@@ -5,3 +5,7 @@
 
 3. Sometimes Gaylees solution is more involved than mine. So dont fret. Just come up
    with the solution.
+
+4. There is no such this as 'vector add' its 'vector push_back'
+
+5. Classes by default have 'private' values
