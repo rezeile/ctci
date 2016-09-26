@@ -1,6 +1,12 @@
-shift-by-i: num_of_ways shift-by-i.cc
-	g++ -std=c++11 -o shift-by-i shift-by-i.cc
-num_of_ways: num_of_ways.cc 
-	g++ -std=c++11 -o num_of_ways num_of_ways.cc 
-clean: 
-	rm num_of_ways
+CC= g++
+RM= rm -vf
+CPPFLAGS= -std=c++11 -Wall -g
+SRCFILES= permutations.cc  magic-index.cc staircase.cc stack-of-boxes.cc coin-change.cc paren-set.cc  subsets.cc robot-paths.cc
+OBJFILES= $(patsubst %.cc, %.o, $(SRCFILES))
+PROGFILES= $(patsubst %.cc, %, $(SRCFILES))
+
+.PHONY: all clean
+
+all: $(PROGFILES)
+clean:
+	rm $(PROGFILES)
