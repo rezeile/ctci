@@ -4,9 +4,9 @@ Chapters in CTCI
 
 2. (IN PROGRESS) Linked Lists
 
-3. (TODO) Stacks and Queues
+3. (DONE) Stacks and Queues
 
-4. (TODO) Trees and Graphs
+4. (DONE) Trees and Graphs
 
 5. (TODO) Bit Manipulation
 
