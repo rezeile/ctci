@@ -1,4 +1,4 @@
-### Chapter 1 | Arrays and Strings
+## Chapter 1 | Arrays and Strings
 
 Note: A file name in parentheses,(file-name), indicates the problem is not implemented yet.
 
@@ -12,7 +12,7 @@ To build specific problem:
 
     Example: make reverse-string (without the .cc)
 
-## Problems and Source Files 
+### Problems and Source Files 
 
 - 1.1 (unique-chars.cc)
 
