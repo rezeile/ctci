@@ -1,37 +1,9 @@
-Chapters in CTCI
+### Solutions to Cracking the Coding Interview, 5th edition 
 
-1. (DONE) Arrays and Strings
-
-2. (IN PROGRESS) Linked Lists
-
-3. (DONE) Stacks and Queues
-
-4. (DONE) Trees and Graphs
-
-5. (TODO) Bit Manipulation
-
-6. Brain Teasers
-
-7. (TODO) Math and Probability
-
-8. Object-Oriented Design
-
-9. (TODO) Recursion and Dynamic Programming
-
-10. (TODO) Scalability and Memory Limits
-
-11. (TODO) Sorting and Searching
-
-12. Testing
-
-13. C and C++
-
-14. Java
-
-15. Databases
-
-16. Threads and Locks
-
-17. (TODO) Moderate Problems
-
-18. (TODO) Hard Problems
+The following directory contains solutions to problems in Gayle
+Laakmann McDowell's, Cracking the Coding Interview, 5th edition. 
+In its current incarnation it does not include solutions to the 
+problems in all 18 chapters. Chapters whose solutions exists are
+includes as [chapter number][chapter name] and further explanations
+and build instructions can be found in the respective READMEs for
+each chapter.
