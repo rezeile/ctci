@@ -1,51 +1,15 @@
-all: list.o print-positions.o sum-list.o delete-kth.o print-positions  kth.o kth  sum-list delete-kt is_palindromeh
+CC= g++
+RM= rm -vf
+CPPFLAGS= -std=c++11 -Wall -g
+SRCFILES=  remove-duplicates.cc kth-to-last.cc \
+           delete-from-middle.cc partition.cc \
+           sum-list.cc detect-cycle.cc
+OBJFILES= $(patsubst %.cc, %.o, $(SRCFILES))
+PROGFILES= $(patsubst %.cc, %, $(SRCFILES))
+SYMFILES=$(patsubst %.cc, %.dSYM, $(SRCFILES))
 
-list.o: list.cc list.h
-	g++ -c list.cc
+.PHONY: all clean
 
-kth.o: kth_to_last.cc node.h list.h
-	g++ -c kth_to_last.cc
-
-kth: kth_to_last.cc node.h list.h list.cc
-	g++ -std=c++11 -o kth_to_last kth_to_last.o list.o
-
-delete-kth.o: delete-kth.cc
-	g++ -std=c++11 -c delete-kth.cc
-delete-kth: delete-kth.cc
-	g++ -std=c++11 -o delete-kth delete-kth.o list.o
-
-delete-middle.o: delete-from-middle.cc node.h list.h
-	g++ -c -o dmiddle.o delete-from-middle.cc
-
-delete-middle: delete-from-middle.cc
-	g++ -std=c++11 -o dmiddle dmiddle.o list.o
-
-remove-duplicates: remove-duplicates.cc
-	g++ -g -o remove-duplicates remove-duplicates.cc
-
-print-postions.o: print-positions.cc
-	g++  -std=c++11 -c print-positions.cc
-
-print-positions: print-positions.cc
-	g++  -std=c++11 -o positions list.o print-positions.o 
-
-partition.o: partition.cc
-	g++ -g -std=c++11 -c partition.cc
-partition: partition.cc
-	g++ -g -std=c++11 -o partition list.o partition.o 
-
-sum-list.o: sum-list.cc
-	g++ -g -std=c++11 -c sum-list.cc
-
-sum-list: sum-list.cc list.cc
-	g++ -g -std=c++11 -o sum-list list.o sum-list.o 
-
-is-palindrome: is-palindrome.cc 
-	g++ -g -std=c++11 -o is-palindrome is-palindrome.cc
-
-detect-cycle: detect-cycle.cc node.h
-	g++ -g -std=c++11 -o detect-cycle detect-cycle.cc
+all: $(PROGFILES)
 clean:
-	rm delete-kth sum-list partition delete-middle remove-duplicates kth_to_last.o list.o kth_to_last detect-cycle
-
-
+	rm -rf $(PROGFILES) $(SYMFILES)
