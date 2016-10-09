@@ -10,7 +10,7 @@ To build specific problem:
 
     make [file-name] 
 
-    Example: make reverse-string (without the .cc)
+    Example: make staircaseg (without the .cc)
 
 ### Problems and Source Files 
 
