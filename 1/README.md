@@ -1,17 +1,30 @@
-1. (NOT COMPLETED) unique characters 
+### Chapter 1 | Arrays and Strings
 
-2. reverse null terminated string 
+Note: A file name in parentheses,(file-name), indicates the problem is not implemented yet.
 
-3. check if one string is permutation of another 
+To build all programs type:
 
-4. replace all spaces in a string ...
+    make 
 
-5. compress a string 
+To build specific problem:
 
-6. given NxN matrix rotate it
+    make [file-name] 
 
-7. set column and row to zero if zero element exists
+    Example: make reverse-string (without the .cc)
 
-8. have is substring, and implement is rotation
+- 1.1 (unique-chars.cc)
 
+- 1.2 (reverse-string.cc)
+
+- 1.3 (is-permutation.cc)
+
+- 1.4 replace-spaces.cc
+
+- 1.5 compress.cc
+
+- 1.6 rotate-matrix.cc
+
+- 1.7 set-to-zero.cc
+
+- 1.8 is-rotation.cc 
 
